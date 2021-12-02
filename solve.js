@@ -1,7 +1,6 @@
 import colors from 'colors'
 
 export default async (year, day, solutionsPromise) => {
-  // @TODO: Fix this jank
   const resolvedSolutions = await solutionsPromise
   const solutions = resolvedSolutions.default
 
