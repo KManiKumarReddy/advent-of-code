@@ -1,12 +1,11 @@
 import fs from "fs";
-import solve from "./solve";
+import solve from "./solve-2021";
 
 const year = process.argv[2];
 const dayToSolve = process.argv[3];
 
 const days = [];
 const solutions = {};
-const inputs = {};
 
 try {
   const files = fs.readdirSync(`./solutions/${year}`);
@@ -20,7 +19,6 @@ try {
 
 days.forEach(async (day) => {
   solutions[day] = import(`./solutions/${year}/${day}/index.js`);
-  inputs[day] = import(`./solutions/${year}/${day}/input.js`);
 });
 
-solve(year, dayToSolve, solutions[dayToSolve], inputs[dayToSolve]);
+solve(year, dayToSolve, solutions[dayToSolve]);
